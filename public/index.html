@@ -27,7 +27,13 @@
   .brand b{color:var(--tan);font-weight:normal}
   .nav nav a{color:#d6d3d1;text-decoration:none;margin-left:26px;font-size:.95rem}
   .nav nav a:hover{color:var(--tan)}
-  @media(max-width:640px){.nav nav a{margin-left:16px}}
+  @media(max-width:640px){
+    .nav{flex-wrap:wrap;row-gap:8px;padding:12px 0}
+    .brand{white-space:nowrap;font-size:1.15rem}
+    .nav nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+    .nav nav a{margin-left:0;white-space:nowrap;font-size:.92rem}
+    .hero{padding:56px 0 52px}
+  }
 
   /* hero */
   .hero{background:var(--ink);color:#f5f0e8;padding:84px 0 72px;position:relative;overflow:hidden}
