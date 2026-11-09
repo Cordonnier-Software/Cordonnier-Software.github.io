@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cordonnier Software — Software, built like a craft</title>
+<meta name="description" content="Cordonnier Software is the home of the software built by Walter LeFort in Sutton, Massachusetts: Apex Family Tree, Nestarr, GigTracker, RV Interchange, and more. Self-hosted where it can be, evidence over assumption.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c1917'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23d6a758' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#1c1917; --ink2:#292524; --paper:#faf7f2; --card:#ffffff;
+    --tan:#d6a758; --tan-dark:#a97e2f; --muted:#57534e; --line:#e7e0d4;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--paper);color:var(--ink);line-height:1.6}
+  h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif}
+  a{color:var(--tan-dark)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{position:sticky;top:0;background:rgba(28,25,23,.96);backdrop-filter:blur(6px);z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{color:#fff;text-decoration:none;font-family:Georgia,serif;font-size:1.25rem;letter-spacing:.02em}
+  .brand b{color:var(--tan);font-weight:normal}
+  .nav nav a{color:#d6d3d1;text-decoration:none;margin-left:26px;font-size:.95rem}
+  .nav nav a:hover{color:var(--tan)}
+  @media(max-width:640px){.nav nav a{margin-left:16px}}
+
+  /* hero */
+  .hero{background:var(--ink);color:#f5f0e8;padding:84px 0 72px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:14px;border-top:2px dashed rgba(214,167,88,.45)}
+  .hero h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.08;margin:0 0 18px;font-weight:normal}
+  .hero h1 em{color:var(--tan);font-style:italic}
+  .hero p.lede{font-size:clamp(1.05rem,2.4vw,1.3rem);color:#d6d3d1;max-width:44rem;margin:0 0 32px}
+  .cta{display:inline-block;background:var(--tan);color:var(--ink);text-decoration:none;
+       padding:13px 26px;border-radius:999px;font-weight:600;margin-right:12px}
+  .cta:hover{background:#e3ba6d}
+  .cta.ghost{background:transparent;color:#f5f0e8;border:1px solid #78716c}
+  .cta.ghost:hover{border-color:var(--tan);color:var(--tan)}
+
+  /* sections */
+  section{padding:72px 0 8px}
+  .kicker{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--tan-dark);font-weight:700;margin:0 0 8px}
+  h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:normal;margin:0 0 14px}
+  .section-intro{color:var(--muted);max-width:46rem;margin:0 0 36px}
+
+  /* project cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+        padding:26px;display:flex;flex-direction:column}
+  .card h3{margin:0 0 4px;font-size:1.3rem;font-weight:normal}
+  .card h3 a{color:var(--ink);text-decoration:none}
+  .card h3 a:hover{color:var(--tan-dark)}
+  .card p{color:var(--muted);margin:6px 0 18px;flex:1}
+  .tag{align-self:flex-start;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;
+       color:var(--tan-dark);border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:14px;background:#fdfaf3}
+  .links{font-size:.92rem}
+  .links a{margin-right:16px;text-decoration:none;font-weight:600}
+  .links a:hover{text-decoration:underline}
+  .links .soon{color:#a8a29e;font-weight:600}
+
+  /* story */
+  .story{background:var(--ink2);color:#e7e5e4;border-radius:24px;padding:48px;margin-top:56px;position:relative}
+  .story::before{content:"";position:absolute;inset:10px;border:2px dashed rgba(214,167,88,.35);border-radius:16px;pointer-events:none}
+  .story h2{color:#fff}
+  .story p{max-width:46rem;color:#d6d3d1}
+  .story .pron{color:var(--tan);font-style:italic}
+
+  /* principles */
+  .principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .principle{border-top:3px solid var(--tan);padding-top:16px}
+  .principle h3{margin:0 0 6px;font-size:1.15rem}
+  .principle p{color:var(--muted);margin:0}
+
+  /* footer */
+  footer{margin-top:84px;background:var(--ink);color:#a8a29e;padding:40px 0}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+  footer a{color:#d6d3d1;text-decoration:none}
+  footer a:hover{color:var(--tan)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">Cordonnier <b>Software</b></a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#story">The Name</a>
+      <a href="#principles">How I Build</a>
+      <a href="https://github.com/Cordonnier-Software">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <h1>Software, built<br>like a <em>craft.</em></h1>
+    <p class="lede">Cordonnier Software is the home of the software built by Walter LeFort in
+      Sutton, Massachusetts — a family tree that shows its sources, a parts lookup that knows
+      what fits, a tracker that keeps a gig worker's numbers honest.</p>
+    <a class="cta" href="#projects">See the projects</a>
+    <a class="cta ghost" href="https://github.com/Cordonnier-Software">Visit the GitHub org</a>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="kicker">Projects</p>
+    <h2>Built to solve a real problem</h2>
+    <p class="section-intro">Every project here started as a problem in front of the builder —
+      at home, on the road, at work, or in the archive. Most are open source; all of them are in daily use.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <span class="tag">Genealogy &amp; records</span>
+        <h3><a href="https://github.com/Cordonnier-Software/Apex-Family-Tree">Apex Family Tree</a></h3>
+        <p>Self-hosted, evidence-first genealogy. People, families, events, places, photographs,
+           documents, and citations — every conclusion in the tree traceable back to the record it came from.</p>
+        <div class="links">
+          <a href="https://aft.lefortonline.com">Live site</a>
+          <a href="https://github.com/Cordonnier-Software/Apex-Family-Tree">GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Home inventory</span>
+        <h3><a href="https://github.com/Cordonnier-Software/Nestarr">Nestarr</a></h3>
+        <p>A home inventory system: know what you own, where it is, and what it's worth.
+           With an Android companion app and a Home Assistant integration.</p>
+        <div class="links">
+          <a href="https://nestarr.com">nestarr.com</a>
+          <a href="https://github.com/Cordonnier-Software/Nestarr">GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Gig work</span>
+        <h3><a href="https://gigtracker.work">GigTracker</a></h3>
+        <p>An all-in-one application to track gig work: earnings, mileage, and expenses,
+           kept dash by dash instead of reconstructed at tax time.</p>
+        <div class="links">
+          <a href="https://gigtracker.work">gigtracker.work</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">RV life</span>
+        <h3><a href="https://github.com/Cordonnier-Software/RV_Interchange">RV Interchange</a></h3>
+        <p>An app specializing in RV parts and sales: Hollander-style interchange lookup,
+           so you can cross-reference what fits what before you buy.</p>
+        <div class="links">
+          <a href="https://rvinterchange.com">rvinterchange.com</a>
+          <a href="https://github.com/Cordonnier-Software/RV_Interchange">GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">RV life</span>
+        <h3>RVLevel</h3>
+        <p>A simple Android RV leveling system for getting a parked rig flat and settled.</p>
+        <div class="links"><span class="soon">In development</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Home &amp; energy</span>
+        <h3><a href="https://github.com/Cordonnier-Software/Oil_Tank_Sensor">Oil Tank Sensor</a></h3>
+        <p>Heating-oil tank level monitoring, so the gauge in the basement isn't the
+           only warning you get.</p>
+        <div class="links">
+          <a href="https://github.com/Cordonnier-Software/Oil_Tank_Sensor">GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Yard &amp; community</span>
+        <h3>Apex Plow</h3>
+        <p>Snow-plow work, organized: the winter counterpart to the rest of the toolkit.</p>
+        <div class="links"><span class="soon">In development</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Yard &amp; community</span>
+        <h3>Apex Scout Manager</h3>
+        <p>A Scouting management tool: rosters, advancement, and the paperwork that comes with both.</p>
+        <div class="links"><span class="soon">In development</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Games</span>
+        <h3>CivicDeNovo</h3>
+        <p>A virtual governance game: build a government from scratch — <em>de novo</em> — and run it.</p>
+        <div class="links"><span class="soon">In development</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Games</span>
+        <h3>SeaQuacks</h3>
+        <p>A cruise duck hunt game. Yes, the rubber ducks people hide on cruise ships. Hunt them.</p>
+        <div class="links"><span class="soon">In development</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Also</span>
+        <h3><a href="https://github.com/CivicMirror">CivicMirror</a></h3>
+        <p>In its own organization: a civic-data platform that normalizes election data into a unified API.</p>
+        <div class="links">
+          <a href="https://civicmirror.app">civicmirror.app</a>
+          <a href="https://github.com/CivicMirror">GitHub org</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="story">
+      <p class="kicker" style="color:var(--tan)">The name</p>
+      <h2>Four generations of shoemakers</h2>
+      <p><strong style="color:#fff">Cordonnier</strong> <span class="pron">(kor-don-YAY)</span> is French for
+        <em>shoemaker</em> — the trade of four generations of the LeFort family, from Joseph Célestin Lefort,
+        cordonnier in Montréal, through Gustave in Worcester's shoe shops, August, and Raymond Jr. at Ray's Shoe Repair.</p>
+      <p>A shoemaker's work is measured, fitted, and made to last — and repaired rather than replaced.
+        That's the standard this software is built to.</p>
+    </div>
+  </div>
+</section>
+
+<section id="principles">
+  <div class="wrap">
+    <p class="kicker">How I build</p>
+    <h2>Three habits</h2>
+    <p class="section-intro"></p>
+    <div class="principles">
+      <div class="principle">
+        <h3>Self-hosted where it can be</h3>
+        <p>Your data lives on your hardware, under your control — not rented back to you from someone else's cloud.</p>
+      </div>
+      <div class="principle">
+        <h3>Evidence over assumption</h3>
+        <p>Conclusions trace back to sources. If a record can't be shown, it isn't claimed.</p>
+      </div>
+      <div class="principle">
+        <h3>Built for a real problem</h3>
+        <p>No software for its own sake. Each project earns its place by being used, daily, by the person who built it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Cordonnier Software · Sutton, Massachusetts</span>
+    <span><a href="https://github.com/Cordonnier-Software">github.com/Cordonnier-Software</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
