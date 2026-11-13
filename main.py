@@ -3,10 +3,20 @@ from flask import Flask, send_from_directory
 app = Flask(__name__)
 
 
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory("public", "robots.txt", mimetype="text/plain")
+
+
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory("public", "sitemap.xml", mimetype="application/xml")
+
+
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def serve(path):
-    # Single-page landing site: every path serves the landing page,
+    # Single-page landing site: every other path serves the landing page,
     # the same fallback pattern nestarr.com uses.
     return send_from_directory("public", "index.html")
 
